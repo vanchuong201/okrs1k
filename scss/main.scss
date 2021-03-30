@@ -1,0 +1,61 @@
+@import './base/font-face';
+@import './base/mixin';
+@import './common/header';
+@import './common/footer';
+@import './pages/home';
+@import './pages/news';
+@import './common/responsive';
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Be Vietnam';
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    background: url(../images/Elements.png) right -255px top no-repeat;
+    background-size: 100%;
+    width: 693px;
+    height: 693px;
+    right: 0;
+    top: 22%;
+    z-index: -1;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    background: url(../images/after.png) left -290px top no-repeat;
+    background-size: 100%;
+    width: 854px;
+    height: 854px;
+    left: 0;
+    top: 49%;
+    z-index: -1;
+  }
+
+  &.news {
+    &::before {
+      width: 433px;
+      height: 433px;
+      background: url(../images/Elements.png) right -170px top no-repeat;
+      top: 14%;
+    }
+    &::after {
+      display: none;
+    }
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+@media only screen and (min-width: 1200px) {
+  .container {
+    max-width: 1200px !important;
+  }
+}
